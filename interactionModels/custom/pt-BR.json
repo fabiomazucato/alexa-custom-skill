@@ -1,0 +1,81 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "agv supply",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloIntent",
+          "slots": [],
+          "samples": [
+            "abrir o",
+            "abrir",
+            "abra o",
+            "abra"
+          ]
+        },
+        {
+          "name": "SearchNoteIntent",
+          "slots": [
+            {
+              "name": "nf",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "samples": [
+            "consulte a note {nf}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "SearchNoteIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "nf",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.208770926606.290901493192"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.208770926606.290901493192",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual o número da nota?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "6"
+}
